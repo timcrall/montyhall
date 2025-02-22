@@ -1,3 +1,4 @@
+// returns a random number between 1 and max
 function getRandomInt(max) {
   return Math.floor(Math.random() * max) + 1;
 }
@@ -12,7 +13,7 @@ function playGame(game, doors) {
     hiddenDoor = getRandomInt(doors - 1) + 1;
   }
   else {
-    // Players guess wrong, Monty reveals all doors except the prize doors
+    // Players guessed wrong, Monty reveals all doors except the prize door
     hiddenDoor = prizeDoor
   }
   console.log ("Monty opens all doors except 1 and " + hiddenDoor);
@@ -30,6 +31,10 @@ function playGame(game, doors) {
     console.log ("ERROR: Something has gone badly wrong");
   }
 }
+
+/*************************************************************/
+/**                      BEGIN                              **/
+/*************************************************************/
 
 if (process.argv.length != 4) {
   console.log ("Usage: node monty.js <num_doors> <num_games>");
